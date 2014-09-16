@@ -14,4 +14,9 @@ Checkout the submodules:
 ```
 
   Boot the environment:
+
   $ vagrant up --provider=vmware_fusion
+
+You can now use the Solr web interface:
+
+  http://localhost:8983/solr

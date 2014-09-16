@@ -18,9 +18,9 @@ staging::deploy { "solr-${solr_version}.tgz":
 }
 
 exec { 'start_solr':
-  command => "/usr/bin/java -jar /usr/local/src/solr-${solr_version}/example/start.jar",
+  command => "/usr/bin/java -jar /usr/local/src/solr-${solr_version}/example/start.jar &",
   cwd     => "/usr/local/src/solr-${solr_version}/example",
   onlyif  => '/bin/ps -ef | grep java',
   timeout => 0,
-  require => Staging::Deploy["solr-${solr_verson}.tgz"],
+  require => Staging::Deploy["solr-${solr_version}.tgz"],
 }
